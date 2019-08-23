@@ -1,0 +1,118 @@
+<div id="Dashboard">
+  <section id="main-header" class="bg-primary py-2 text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>
+            <i class="mdi mdi-settings"></i>
+            Dashboard
+          </h1>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- -----ACTIONS---- -->
+
+  <section id="actions" class="bg-light py-4 mb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <a class="btn btn-primary btn-block" (click)="OpenModal(modalPost,'lg')">
+            <i class="mdi mdi-plus-one" style="font-size: 20px; font-weight: 600"></i>
+            Add Post
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a href="#" class="btn btn-success btn-block">
+            <i class="mdi mdi-plus-one" style="font-size: 20px; font-weight: 600"></i>
+            Add Category
+          </a>
+        </div>
+        <div class="col-md-3">
+          <a class="btn btn-warning btn-block " (click)="OpenModal(modalUser,'lg')">
+            <i class=" mdi mdi-plus-one" style="font-size: 20px; font-weight: 600"></i>
+            Add User
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- ///////////// MODALS ////////// -->
+    <!-- //////ADD POST//////// -->
+    <ng-template #modalPost let-modal>
+      <div class="modal-header bg-primary text-white">
+        <h4 class="modal-title" id="modal-basic-title">Add Post</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.close(false)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form accept-charset="UTF-8" novalidate>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-control">
+              <option value="">Web development</option>
+              <option value="">Tech Gadgest</option>
+              <option value="">Business</option>
+              <option value="">Healt & Wellness</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="title">Image upload</label>
+            <input type="file" class="form-control-file">
+            <small class="form-text text-muted">Max Size 3mb</small>
+          </div>
+          <div class="form-group">
+            <label for="title">Body</label>
+            <ckeditor [(ngModel)]="contentPostBody" #myckeditor="ngModel" name="myckeditor" required
+              [config]="ckeConfig" debounce="250" (change)="onChangePostCk($event)">
+            </ckeditor>
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.close(false)">Close</button>
+        <button type="button" class="btn btn-primary" (click)="modal.close(true)">Save</button>
+      </div>
+    </ng-template>
+    <!-- //////ADD User//////// -->
+    <ng-template #modalUser let-modal>
+      <div class="modal-header bg-warning text-dark">
+        <h4 class="modal-title" id="modal-basic-title">Add User</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.close(false)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="title">Name</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="title">Email</label>
+            <input type="email" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="title">Password</label>
+            <input type="password" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="title">Confirm Password</label>
+            <input type="password" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.close(false)">Close</button>
+        <button type="button" class="btn btn-warning" (click)="modal.close(true)">Save</button>
+      </div>
+    </ng-template>
+  </section>
+
+</div>
