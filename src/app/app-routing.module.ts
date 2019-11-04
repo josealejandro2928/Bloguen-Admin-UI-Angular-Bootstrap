@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'blogen'
+    redirectTo: 'blogen/dasboard'
   }
 ];
 
