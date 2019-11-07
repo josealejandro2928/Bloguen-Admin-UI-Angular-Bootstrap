@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppShareModule } from 'src/app/app-share/app-share.module';
 import { CoreModule } from './core/core.module';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +14,8 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     AppRoutingModule,
     AppShareModule,
-    CoreModule
+    CoreModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

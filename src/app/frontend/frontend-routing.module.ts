@@ -1,11 +1,12 @@
 import { UsersComponent } from './users/users.component';
 import { CategoriesComponent } from './categories/categories.component';
-import { PostComponent } from './post/post.component';
-
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FrontendLayoutComponent } from './frontend-layout/frontend-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EditPostComponent } from './post/edit-post/edit-post.component';
+import { PostComponent } from './post/post/post.component';
+import { PostLayoutComponent } from './post/post-layout.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,18 @@ const routes: Routes = [
       },
       {
         path: 'post',
-        component: PostComponent
+        component: PostLayoutComponent,
+        children: [
+          {
+            path: '',
+            component: PostComponent
+          },
+          {
+            path: 'edit/:id',
+            component: EditPostComponent
+          }
+
+        ]
       },
       {
         path: 'categories',
@@ -27,7 +39,8 @@ const routes: Routes = [
       {
         path: 'users',
         component: UsersComponent
-      }
+      },
+
     ]
   },
   {

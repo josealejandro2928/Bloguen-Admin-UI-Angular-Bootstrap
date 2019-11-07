@@ -4,10 +4,13 @@ import { CommonModule } from '@angular/common';
 import { FrontendRoutingModule } from './frontend-routing.module';
 import { FrontendLayoutComponent } from './frontend-layout/frontend-layout.component';
 import { UsersComponent } from './users/users.component';
-import { PostComponent } from './post/post.component';
+import { PostComponent } from './post/post/post.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { EditPostComponent } from './post/edit-post/edit-post.component';
+import { PostLayoutComponent } from './post/post-layout.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +18,9 @@ import { CKEditorModule } from 'ng2-ckeditor';
     DashboardComponent,
     UsersComponent,
     PostComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    EditPostComponent,
+    PostLayoutComponent
   ],
   imports: [
     CommonModule,
